@@ -1,0 +1,152 @@
+/*  
+Project Name: Random Images Gallery
+Description: Get random images on each refresh. I've used Unspalsh source to get these images. Give me a thumbs-up, If you like it. Enjoy!
+Author: Abdul Samad
+Author URI: https://getabdulsamad.com/
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, rgb(244, 208, 63), rgb(247, 220, 111));
+  color: #2f2b36;
+  margin: 0 0 60px 0;
+  min-height: 100vh;
+  letter-spacing: 0.3px;
+}
+
+.container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-title {
+  width: 100%;
+}
+
+.project-title h1 {
+  font-size: 34px;
+  text-align: center;
+  font-weight: 600;
+  margin: 50px 0;
+}
+
+.images {
+  -webkit-display: grid;
+  -moz-display: grid;
+  display: grid;
+  -webkit-grid-template-columns: auto auto auto auto;
+  -moz-grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  -webkit-grid-gap: 15px 15px;
+  -moz-grid-gap: 15px 15px;
+  grid-gap: 15px 15px;
+}
+
+.images img {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100%;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(47, 43, 54, 0.5);
+}
+
+.popup img {
+  max-width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.close {
+  background: linear-gradient(to right, rgb(244, 208, 63), rgb(247, 220, 111));
+  border: 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+
+.close:active {
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
+.close:focus {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+@media only screen and (max-width: 992px) {
+  .images {
+    -webkit-grid-template-columns: auto auto auto;
+    -moz-grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .images {
+    -webkit-grid-template-columns: auto auto;
+    -moz-grid-template-columns: auto auto;
+    grid-template-columns: auto auto;
+  }
+}
